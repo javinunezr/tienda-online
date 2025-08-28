@@ -1,38 +1,69 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta chatset="UTF-8">
-    <meta name="viewport" content="width=devide-width, initial-scale=1.0">
-    <title>Inicio - Play & Fun - Tienda de juegos Online</title>
-    <!--Aquí conectaremos la hoja de estilos CSS cuando la tengamos-->
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inicio - Play & Fun - Tienda de juegos Online</title>
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
-    <!--Encabezado de la página-->
-    <header>
-        <h1>Bienvenidos a Play & Fun - Tienda de juegos Online</h1>
-        <p>Compra tus juegos favoritos desde la comodidad de tu hogar.</p>
-    </header>
+<body class="layout-grid">
+  <!-- Encabezado -->
+  <header class="site-header header">
+    <h1>Bienvenidos a Play & Fun - Tienda de juegos Online</h1>
+    <p>Compra tus juegos favoritos desde la comodidad de tu hogar.</p>
+  </header>
 
-    <!--Menú de navegación-->
-    <nav>
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
-    
-    <!--Sección principal-->
-    <section>
-        <h2>Ofertas del mes</h2>
-        <p>Aprovecha nuestras ofertas exclusivas en juegos. Revisa nuestro catálogo en la sección Productos. ¡Entrega a domicilio!</p>
+  <!-- Menú de navegación -->
+  <nav class="site-nav">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="productos.html">Productos</a></li>
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Principal -->
+  <main class="site-main">
+    <section class="box">
+      <h2>Lanzamientos del mes</h2>
+      <p>¡Pronto tendremos novedades respecto a la precompra y compra de estos lanzamientos! ¡Atento a nuestras redes sociales!</p>
+
+      <!-- FLEXBOX simple para las tarjetas -->
+      <div class="cards-flex">
+        <article>
+          <h3>Gears of War: Reloaded</h3>
+          <figure>
+            <img src="images/gearsofwar.png" alt="Gears of War: Reloaded" width="400" height="400" />
+            <figcaption>Fecha de lanzamiento: 26 de agosto</figcaption>
+          </figure>
+          <p>Por primera vez en PS5, este icónico shooter en tercera persona llega con resolución 4K, hasta 120 fps y juego cruzado.</p>
+        </article>
+
+        <article>
+          <h3>Metal Gear Solid: Snake Eater</h3>
+          <figure>
+            <img src="images/metalgear.png" alt="Metal Gear Solid Delta: Snake Eater" width="400" height="400" />
+            <figcaption>Fecha de lanzamiento: 28 de agosto</figcaption>
+          </figure>
+          <p>El esperado remake con Unreal Engine promete una experiencia visual renovada y fiel al clásico.</p>
+        </article>
+
+        <article>
+          <h3>Senua's Saga: Hellblade II</h3>
+          <figure>
+            <img src="images/senuassaga.png" alt="Senua's Saga: Hellblade II" width="400" height="400" />
+            <figcaption>Fecha de lanzamiento: 12 de agosto</figcaption>
+          </figure>
+          <p>La secuela del aclamado Hellblade regresa con una narrativa intensa y visuales impactantes.</p>
+        </article>
+      </div>
     </section>
+  </main>
 
-    <!--Pie de página-->
-    <footer>
-        <p>Dirección: Avenida Valparaíso 456, Viña del Mar, Chile</p>
-        <p>Teléfono: +123 456 798</p>
-    </footer>
+  <!-- Pie de página -->
+  <footer class="site-footer">
+    <p>Dirección: Avenida Valparaíso 456, Viña del Mar, Chile</p>
+    <p>Teléfono: +123 456 798</p>
+  </footer>
 </body>
 </html>
