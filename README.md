@@ -53,7 +53,7 @@ supermercado-proyecto/
 
 ## 🌐 Ver el Proyecto
 
-Puedes ver el proyecto funcionando en: https://javinunezr.github.io/desarrollo_frontend_I/
+Puedes ver el proyecto funcionando en: https://javinunezr.github.io/tienda-online/ 
 
 ## 👨‍💻 Desarrollado por
 
