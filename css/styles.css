@@ -1,0 +1,236 @@
+/* ===== Modelo de cajas básico ===== */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --fuente-principal: 'Arial', 'Helvetica Neue', sans-serif;
+  --color-fondo: #f7f7fb;
+  --color-texto: #1f2937;
+  --color-acento: #ce1616;
+  --color-texto-claro: #ffffff;
+  --color-borde: #e5e7eb;
+  --radio: 10px;
+}
+
+/* ===== Layout general ===== */
+body {
+  font-family: var(--fuente-principal);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* ===== GRID de toda la página  ===== */
+.layout-grid {
+  display: grid;
+  justify-content: center;
+  grid-template-areas:
+    "header header"
+    "nav    nav"
+    "main   aside"
+    "footer footer";
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100dvh;
+  gap: 16px;
+  padding: 16px;
+}
+
+.site-aside:not(:has(*)) { display: none; }
+
+.layout-grid:has(.site-aside:not(:has(*))) {
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+  grid-template-columns: 1fr;
+}
+
+/* ===== Cabecera ===== */
+.header {
+  background-color: #111827;
+  color: var(--color-texto-claro);
+  text-align: center;
+  padding: 24px 16px;
+}
+.header h1 { font-size: 2rem; margin: 0 0 6px; }
+.header p  { font-size: 1rem; margin: 0; opacity: .95; }
+
+/* Colocación en el GRID de página */
+.site-header { grid-area: header; border-radius: var(--radio); }
+.site-nav    { grid-area: nav;    border-radius: var(--radio); }
+
+.site-main {
+  justify-items: center;
+  grid-area: main;                
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: center;         
+}
+
+.site-main > section,
+.site-main > .box,
+.site-main > .productos {
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px auto;            
+}
+
+.site-aside  { grid-area: aside; }
+.site-footer { grid-area: footer; border-radius: var(--radio); }
+
+/* ===== Navegación (FLEXBOX) ===== */
+nav { background: #fff; border: 1px solid var(--color-borde); }
+nav ul {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding: 10px 16px;
+  margin: 0;
+  list-style: none;
+}
+nav a {
+  color: var(--color-texto);
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  text-decoration: none;
+}
+nav a:hover { background: #f1f5f9; border-color: var(--color-borde); }
+
+/* ===== Secciones y cajas ===== */
+section { max-width: 1000px; margin: 20px auto; }
+.box {
+  background: #fff;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  border-left: 4px solid var(--color-acento);
+  border-right: 4px solid var(--color-acento);
+  padding: 16px;
+}
+
+/* Tarjetas de contenido */
+section article {
+  background: #fff;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 16px;
+}
+section article h3 { color: var(--color-acento); margin-top: 0; }
+section article figure { margin: 0 0 10px; text-align: center; }
+section article img{
+  width: 100%;
+  aspect-ratio: 1 / 1;  
+  object-fit: cover;   
+  display: block;
+}
+
+/* ===== Selector por ID: contacto ===== */
+#contacto { background: #fff; border-radius: var(--radio); }
+
+/* ====== Formulario con CSS Grid (dos columnas) ====== */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* etiqueta | campo */
+  gap: 12px 16px;                 /* filas | columnas */
+  max-width: 720px;
+}
+.form-grid label { align-self: center; }
+.form-grid input,
+.form-grid textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--color-texto);
+}
+.form-grid input:focus,
+.form-grid textarea:focus {
+  outline: 2px solid var(--color-acento);
+  outline-offset: 2px;
+}
+
+/* Acciones del formulario (FLEXBOX simple) */
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+  margin-top: 4px;
+}
+.form-actions button {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--color-acento);
+  color: #fff;
+  cursor: pointer;
+}
+.form-actions button[type="reset"] { background: #64748b; }
+
+/* ====== FLEXBOX para tarjetas (Index) ====== */
+.cards-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: stretch;
+}
+.cards-flex > article {
+  flex: 1 1 280px;  
+  min-width: 240px;
+}
+
+.cards-flex{
+  max-width: 1100px;
+  margin-inline: auto;
+  justify-content:center;   
+}
+
+/* ====== GRID para productos (Productos) ====== */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+/* ===== Aside ===== */
+.site-aside.box p { margin: 6px 0; }
+
+/* ===== Pie de página ===== */
+footer {
+  background-color: #111827;
+  color: var(--color-texto-claro);
+  text-align: center;
+  padding: 16px;
+  font-size: 0.95rem;
+  border: 1px solid #00000020;
+}
+footer p { margin: 4px 0; }
+
+/* ===== Responsivo ===== */
+@media (max-width: 800px) {
+  .layout-grid {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+    grid-template-columns: 1fr;
+  }
+  .form-grid { grid-template-columns: 1fr; }
+}
+
+/* Configuración para móviles. Vuelve a centrarse para que se vea mejor */
+@media (max-width: 800px){
+  .site-main > section,
+  .site-main > .box,
+  .site-main > .productos {
+    margin: 20px auto;
+  }
+}

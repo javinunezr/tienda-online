@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto - Play & Fun - Tienda de juegos Online</title>
+  <link rel="stylesheet" href="css/bootstrap.css" />
+</head>
+<body class="layout-grid">
+  <!-- Encabezado -->
+  <header class="bg-dark text-white text-center p-3">
+    <h1>Contacto</h1>
+    <p>¿Tienes preguntas sobre nuestros productos o tu pedido? ¡Contáctanos!</p>
+  </header>
+
+  <!-- Menú de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+
+       <!-- Botón de colapso pantallas pequeñas -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+       <!-- Menú colapsable -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="productos.html">Productos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+  </nav>
+
+  <!-- Principal -->
+  <main class="container my-5">
+    <section class="text-center mb-4">
+      <h2 class="display-5 fw-bold mb-3">Formulario de contacto</h2>
+      <p class="lead text-muted">Formulario de contacto para <strong>Play & Fun</strong></p>
+    </section>
+
+    <!-- Grid Layout para Formulario e Información -->
+    <div class="row">
+      <!-- Formulario de contacto -->
+      <div class="col-lg-8 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title mb-4">Envíanos un mensaje</h5>
+            <form action="/enviar" method="post" novalidate>
+              <!-- Campo Nombre -->
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre completo</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+              </div>
+
+              <!-- Campo Email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@correo.com" required>
+              </div>
+
+              <!-- Campo Asunto -->
+              <div class="mb-3">
+                <label for="asunto" class="form-label">Asunto</label>
+                <select class="form-select" id="asunto" name="asunto" required>
+                  <option value="">Selecciona un asunto</option>
+                  <option value="consulta-producto">Consulta sobre producto</option>
+                  <option value="pedido">Consulta sobre pedido</option>
+                  <option value="devolucion">Devolución</option>
+                  <option value="soporte">Soporte técnico</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+
+              <!-- Campo Mensaje -->
+              <div class="mb-4">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje…" required></textarea>
+              </div>
+
+              <!-- Botones -->
+              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="reset" class="btn btn-outline-secondary me-md-2">Limpiar</button>
+                <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Información de contacto -->
+      <div class="col-lg-4 mb-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h5 class="card-title mb-4">Información de contacto</h5>
+            
+            <div class="mb-3">
+              <h6 class="fw-bold">📞 Teléfono</h6>
+              <p class="text-muted mb-0">+123 456 798</p>
+            </div>
+
+            <div class="mb-3">
+              <h6 class="fw-bold">📧 Email</h6>
+              <p class="text-muted mb-0">atencion@playandfun.com</p>
+            </div>
+
+            <div class="mb-3">
+              <h6 class="fw-bold">📍 Dirección</h6>
+              <p class="text-muted mb-0">Avenida Valparaíso 456<br>Viña del Mar, Chile</p>
+            </div>
+
+            <div class="mb-3">
+              <h6 class="fw-bold">🕒 Horario de atención</h6>
+              <p class="text-muted mb-0">Lunes a Viernes: 9:00 - 18:00<br>Sábados: 10:00 - 14:00</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="bg-dark text-white text-center p-3">
+    <p>Dirección: Avenida Valparaíso 456, Viña del Mar, Chile</p>
+    <p>Teléfono: +123 456 798</p>
+  </footer>
+
+  <!-- Bootstrap JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
