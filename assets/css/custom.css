@@ -1,0 +1,115 @@
+/* Estilos para las imágenes de productos */
+.product-image {
+    height: 200px;
+    object-fit: contain;
+    background-color: #f8f9fa;
+    padding: 10px;
+}
+
+/* Efectos para las tarjetas */
+.card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+}
+
+/* Estilos para el carrito */
+.cart-item {
+    transition: all 0.3s ease;
+}
+
+.cart-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Estilos para el navbar */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Estilos para los badges */
+.badge {
+    font-size: 0.75rem;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .card-title {
+        font-size: 1rem;
+    }
+    
+    .product-image {
+        height: 150px;
+    }
+}
+
+/* Loading spinner personalizado */
+.spinner-border {
+    width: 3rem;
+    height: 3rem;
+}
+
+/* Estilos para el footer */
+footer {
+    margin-top: auto;
+}
+
+footer a:hover {
+    color: #adb5bd !important;
+}
+
+/* Animación para botones */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Estilos para el offcanvas del carrito */
+.offcanvas {
+    width: 400px !important;
+}
+
+@media (max-width: 576px) {
+    .offcanvas {
+        width: 100% !important;
+    }
+}
+
+/* Notificaciones */
+.toast {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para el dropdown de categorías */
+.dropdown-menu {
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item:hover {
+    background-color: #0d6efd;
+    color: white;
+}
+
+/* Estilos para el formulario de búsqueda */
+#searchInput:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+/* Estilos para elementos de rating */
+.text-muted small {
+    font-size: 0.8rem;
+}
